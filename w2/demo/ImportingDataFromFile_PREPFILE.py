@@ -9,13 +9,17 @@
 #BASE PROGRAM CODE-------------------------------------------------------------------
 
 #STEP 1: import csv library so we can read the file
-
+import csv 
 
 #you should ALWAYS have a total records var for your first few attempts at file reading
+total_records = 0
 
 #holds all salaries in file for total print at end
+total_salary = 0
 
 #prnt header -- at the end, once everything else is running accurately
+print(f"{'NAME':10} \t{'AGE':3} \t${('SALARY'):10}")
+print("----------------------------------")
 
 
 #STEP 2: CONNNECT TO THE FILE LOCATION
@@ -23,9 +27,9 @@
 #these file locations are cAsE sEnSiTiVe & space/special character sensitive so DOUBLE CHECK THEM!
 #flip all '\' to '/'
 
-
-
+with open("w2/demo/example.csv") as csvfile:
     #notice ':' everything must be INDENTED now (until we're ready to "close" the file)
+    file = csv.reader(csvfile)
 
     #STEP 3: ALLOW THE FILE TO BE READ BY OUR PROGRAM
     
@@ -38,7 +42,17 @@
     #range: '0 - 10', 'a - f'
     
     #STEP 4: ACTUALLY READ/PROCESS THE FILE DATA, ONE RECORD AT A TIME
-    
+    for rec in file:
+
+        #print(rec)
+        print(f"{rec[0]:10} \t{rec[1]:3} \t${float(rec[2]):10.2f}")
+
+        total_records += 1
+
+        #update total salarie
+        total_salary += float(rec[2])
+
+
 
         #notice the ':' everything in the for loop must be INDENTED
         #RANGE: for each record in the file, do the following
@@ -52,7 +66,7 @@
                     #in order to specify a data point over another, we need to know its POSITION IN THE LIST
 
         #print only the names in the file -- specify position of data in lit
-            
+        #print(f"{rec[0]}")
 
             
 
