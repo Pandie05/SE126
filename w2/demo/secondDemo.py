@@ -25,10 +25,7 @@ with open("w2/demo/example.csv") as csvfile:
         #store data from rec list to list
         #add data to list ---> .append() ; requires LIST NAME as starting object
 
-        names.append(rec[0])
-        ages.append(int(rec[1]))
-        salaries.append(float(rec[2]))
-
+        
         #keep count of num of records
         ttl_rcd += 1
 
