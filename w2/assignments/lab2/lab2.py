@@ -1,33 +1,44 @@
 #Name: Hendry
 #Date 1/23/24
-#In Clas Lab
+#Lab 2
 #Course name: SE126
-#Program Prompt: Write a program that displays all rooms that are over the maximum limit of people and the number of people that have to be notified that they will have to be put on the wait list. After the file is completely processed the program should display the number of records processed and the number of rooms that are over the limit.
+#Program Prompt: You have been asked to produce a report that lists all the computers in the csv file lab2b.csv. Your report should look like the following sample output. The last line should print the number of computers in the file. Organization of the csv file:
 #variable dictionary:
-#ttl_rcd = total records processed
-#rms_ovr = rooms over the maximum allowed number
-#max = maximun allowed guests per room
-#min = current number of guests in room
+#ttl_records = total records recorded in file
+#comp_type = computer type
+#manu = manufacturer
+#processor = processor -_-
+#ram = ram in computer
+#hdd_1 = hard disk drive 1
+#num_hdd = number of hdd
+#hdd_2 = hard disk drive 2
+#os = operating system
+#year = year computer was made
+
 #---------------------------------------------
+#import
 import csv
 
 #ttl counter
 ttl_records = 0
 
-print(f"\n{'TYPE':8} {'MANU':8} {'PROC':6} {'PROC':6} {'RAM':6} {'HDD1':6} {'#HDD':6} {'HDD2':6} {'YEAR':6}")
+#header
+print(f"\n{'TYPE':8} {'Brand':8} {'Cpu':6} {'RAM':6} {'HDD1':6} {'#HDD':3} {'HDD2':6} {'OS':5} {'YEAR':6}")
 print("----------------------------------------------------------------")
 
+#open csv file
 with open("w3/demo/lab2b.csv") as csvfile:
 
+    #read file
     file = csv.reader(csvfile)
 
+    #for loop-------------------------------------------------
     for rec in file:
-        #print(rec) #shown as list
 
         #keep count
         ttl_records += 1
 
-        #Filter for Display
+        #Filter for Display------
 
         #--comp type-- rec[0]
 
@@ -79,7 +90,7 @@ with open("w3/demo/lab2b.csv") as csvfile:
 
 
         #final print for each record
-        print(f"{comp_type:8} {manu:8} {processor:6} {ram:6} {hdd_1:6} {num_hdd:6} {hdd_2:6} {os:6} {year:6}")
+        print(f"{comp_type:8} {manu:8} {processor:6} {ram:6} {hdd_1:6} {num_hdd:3} {hdd_2:6} {os:6} {year:6}")
 
 #----DISCONNECTED FROM FILE-------------------------------------
 
