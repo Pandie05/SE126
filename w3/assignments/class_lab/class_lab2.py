@@ -1,8 +1,33 @@
+#Name: Hendry
+#Date 1/23/24
+#Lab 2
+#Course name: SE126
+#Program Prompt: You have been asked to produce a report that lists all the computers in the csv file lab2b.csv. Your report should look like the following sample output. The last line should print the number of computers in the file. Organization of the csv file:
+#variable dictionary:
+#ttl_records = total records recorded in file
+#comp_type = computer type
+#manu = manufacturer
+#processor = processor -_-
+#ram = ram in computer
+#hdd_1 = hard disk drive 1
+#num_hdd = number of hdd
+#hdd_2 = hard disk drive 2
+#os = operating system
+#year = year computer was made
+#dsk_cnt = desktop count
+#dsk_mny = desktop cost
+#ltp_cnt = laptop count
+#ltp_mny = laptop cost
+
+
+#----------------------------------------------------------------------------
+
 import csv
 
 #ttl counter
 ttl_records = 0
 
+#create lists
 comp_type_list = []
 manu_list = []
 processor_list = []
@@ -13,11 +38,14 @@ hdd_2_list = []
 os_list = []
 year_list = []
 
+#outline
 print(f"\n{'TYPE':8} {'MANU':8} {'PROC':6} {'PROC':6} {'RAM':6} {'HDD1':6} {'#HDD':6} {'HDD2':6} {'YEAR':6}")
 print("----------------------------------------------------------------")
 
+#open file
 with open("w3/demo/lab2b.csv") as csvfile:
 
+    #read file
     file = csv.reader(csvfile)
 
     for rec in file:
@@ -75,6 +103,7 @@ with open("w3/demo/lab2b.csv") as csvfile:
             year = "ERROR"
 
 
+        #append-----------------------------
         comp_type_list.append(comp_type)
         manu_list.append(manu)
         processor_list.append(processor)
@@ -91,26 +120,34 @@ with open("w3/demo/lab2b.csv") as csvfile:
 
 #----DISCONNECTED FROM FILE-------------------------------------
 
+#starting values
 dsk_cnt = 0
 dsk_mny = 0
 ltp_cnt = 0
 ltp_mny = 0
 
+#for loop (desktop) -----------------------------------------
 for index in range(0, len(comp_type_list)):
+
     if comp_type_list[index] == "Desktop" and int(year_list[index]) <= 16:
+
+        #change count for each desktop and add hopw much each costs
         dsk_cnt += 1
         dsk_mny += 2000
 
+#for loop (laptop) --------------------------------------------
 for index in range(0, len(comp_type_list)):
+
     if comp_type_list[index] == "Laptop" and int(year_list[index]) <= 16:
+
+        #change count for each laptop and add hopw much each costs
         ltp_cnt += 1
         ltp_mny += 1500
 
+
+#Final Print Statements-------------------------------------------------------------
 print("----------------------------------------------------------------")
-print(f"TOTAL RECORDS: {ttl_records}")
+print(f"TOTAL RECORDS: {ttl_records}\n")
 
-print(dsk_cnt)
-print(dsk_mny)
-
-print(ltp_cnt)
-print(ltp_mny)
+print(f"To replace {dsk_cnt} it will cost ${dsk_mny}")
+print(f"To replace {ltp_cnt} it will cost ${ltp_mny}")
