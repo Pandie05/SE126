@@ -85,7 +85,7 @@ with open("w3/demo/lab2b.csv") as csvfile:
         processor = rec[2]
         ram = rec[3]
         hdd_1 = rec[4]
-        num_hdd =rec[5]
+        num_hdd = rec[5]
 
         if rec[5] == "1":
             hdd_2 = "   "#"---" #none
