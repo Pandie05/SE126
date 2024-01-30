@@ -33,7 +33,6 @@ for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]}")
 
 #calculate student average
-
 avg = 0
 ttl_cnt = 0
 
