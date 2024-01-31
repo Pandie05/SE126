@@ -16,6 +16,8 @@
 
 
 #--------------------------------------------------------------------------------------
+
+#part 1 ----------------------------------------------------------------------------------------------
 #import
 import csv
 
@@ -26,10 +28,13 @@ test1 = []
 test2 = []
 test3 = []
 
+#open csv file
 with open("w4/assignments/class_lab/listPractice1.txt") as csvfile:
 
+    #read csv file
     file = csv.reader(csvfile)
 
+    #append for loop
     for rec in file:
 
         #store data from file fields to their list
@@ -46,15 +51,20 @@ print(f"{'FIRST':12} \t {'LAST':12} \t {'TEST1'} \t {'TEST2'} \t {'TEST3'}")
 print("-----------------------------------------------------------------------")
 
 #process list
+#for loop-----------------------------------------
 for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]} \t")
 
-#calculate student average
+
+#part 2 ---------------------------------------------------------------------------------------------------
+
+#initial values
 avg = 0
 ttl_cnt = 0
 
 average = []
 
+#for loop-----------------------------------------
 for i in range(0, len(test1)):
 
     #calculate average
@@ -71,11 +81,14 @@ print("-----------------------------------------------------------------------")
 for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]} \t {average[i]:.1f}")
 
+#header
 print(f"\n\n{'FIRST':12} \t {'LAST':12} \t {'TEST1'} \t {'TEST2'} \t {'TEST3'} {'AVERAGE'} {'GRADE'}")
 print("--------------------------------------------------------------------------")
 
+#letter grade list
 let_grade = []
 
+#turning number grade -> letter grade
 for i in range(0, len(fname)):
     if average[i] >= 90:
         let_grade.append('A')
@@ -95,3 +108,27 @@ for i in range(0, len(fname)):
 for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]} \t {average[i]:.1f} \t {let_grade[i]}")
 
+
+#Par 3 ----------------------------------------------------------------------------
+
+students = []
+
+for i in range(0, len(fname)):
+
+    students.append([fname[i], lname[i], test1[i], test2[i], test3[i], round(average[i]), let_grade[i]])
+
+#header
+print(f"\n\n{'FIRST':8}\t    {'LAST':8}\t\t{'TEST1':8}\t{'TEST2':8}\t{'TEST3':8}\t{'AVERAGE':8}   {'GRADE':8}")
+print("-------------------------------------------------------------------------------------------------------------------------------")
+
+#for loop -------------------------------------------
+for i in range(0, len(students)):
+    
+     for i in range(0, len (students[i])):
+    
+        for x in range(0, len(students[i])):
+
+            #final print
+            print(f"{students[i][x]:8}", end="\t    ")
+
+        print()
