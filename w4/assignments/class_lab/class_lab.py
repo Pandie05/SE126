@@ -16,6 +16,8 @@
 
 
 #--------------------------------------------------------------------------------------
+
+#part 1 ----------------------------------------------------------------------------------------------
 #import
 import csv
 
@@ -49,6 +51,8 @@ print("-----------------------------------------------------------------------")
 for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]} \t")
 
+
+#part 2 ---------------------------------------------------------------------------------------------------
 #calculate student average
 avg = 0
 ttl_cnt = 0
@@ -71,6 +75,7 @@ print("-----------------------------------------------------------------------")
 for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]} \t {average[i]:.1f}")
 
+#header
 print(f"\n\n{'FIRST':12} \t {'LAST':12} \t {'TEST1'} \t {'TEST2'} \t {'TEST3'} {'AVERAGE'} {'GRADE'}")
 print("--------------------------------------------------------------------------")
 
@@ -95,3 +100,8 @@ for i in range(0, len(fname)):
 for i in range(0, len(fname)):
     print(f"{fname[i]:12} \t {lname[i]:12} \t {test1[i]} \t {test2[i]} \t {test3[i]} \t {average[i]:.1f} \t {let_grade[i]}")
 
+students = []
+
+for i in range(0, len(fname)):
+    students.append([fname[i]] [lname[i]] [test1[i]] [test2[i]] [test3[i]] [average[i]] [let_grade[i]])
+    
