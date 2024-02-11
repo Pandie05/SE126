@@ -9,10 +9,6 @@
 import csv
 
 #functions
-def menu():
-
-    print(f"{'FIRST':8}  |  {'POKEMON1':13}  |  {'POKEMON2':13}  |  {'REGION':7}  |  {'CITY':15}")
-    print("------------------------------------------------------------------------------------")
 
 fname = []
 pokemon1 = []
@@ -33,7 +29,9 @@ with open("w5/Midterm/pokemon.csv") as csvfile:
         region.append(rec[3])
         city.append(rec[4])
 
-menu()
+
+print(f"{'FIRST':8}  |  {'POKEMON1':13}  |  {'POKEMON2':13}  |  {'REGION':7}  |  {'CITY':15}")
+print("------------------------------------------------------------------------------------")
 
 for i in range(0,len(fname)):
 
