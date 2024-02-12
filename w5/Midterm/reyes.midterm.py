@@ -25,12 +25,12 @@ with open("w5/Midterm/pokemon.csv") as csvfile:
 
         fname.append(rec[0])
         pokemon1.append(rec[1])
-        pokemon2.append((rec[2]))
+        pokemon2.append(rec[2])
         region.append(rec[3])
         city.append(rec[4])
 
 
-print(f"{'FIRST':8}  |  {'POKEMON1':13}  |  {'POKEMON2':13}  |  {'REGION':7}  |  {'CITY':15}")
+print(f"\n\n{'FIRST':8}  |  {'POKEMON 1':13}  |  {'POKEMON 2':13}  |  {'REGION':7}  |  {'CITY':15}")
 print("------------------------------------------------------------------------------------")
 
 for i in range(0,len(fname)):
