@@ -27,12 +27,12 @@ def menu():
     print("4. Exit")
 
     #gather option
-    choice = int(input("Enter Your Choice [1 - 4]: "))
+    choice = (input("Enter Your Choice [1 - 4]: "))
 
-    while choice != 1 and choice != 2 and choice != 3 and choice != 4:
-        print("*INVALID ENTRY* DIGITS 1 - 4 ONLY DUMMY")
+    while choice != '1' and choice != '2' and choice != '3' and choice != '4':
+        print("\n\n*INVALID ENTRY* DIGITS 1 - 4 ONLY DUMMY\n\n")
 
-        choice = int(input("Enter Your Choice [1 - 4]: "))
+        choice = (input("Enter Your Choice [1 - 4]: "))
 
     #return choice
     return choice
@@ -71,10 +71,10 @@ kanto = 0
 lav = 0
 
 #While Loop start----------------------------------------------------
-while answer != 4:
+while answer != '4':
 
     #display all file data
-    if answer == 1:
+    if answer == '1':
 
         print("\n\t-- Showing all Data --")
 
@@ -88,7 +88,7 @@ while answer != 4:
             print('---------------------------------------------------------------------------------')
 
     #display all pokemon
-    if answer == 2:
+    if answer == '2':
 
         print("\n\t-- Showing Pokemon --")
 
@@ -99,7 +99,7 @@ while answer != 4:
             print('--------------------------------------------')
 
     #gather stats
-    if answer == 3:
+    if answer == '3':
 
         print("\t-- Showing Stats --")
 
@@ -144,4 +144,4 @@ while answer != 4:
 #While Loop end------------------------------------------------------------------------------------------
         
 #goodbye 
-print("\n\nGoodbye :)")
+print("\nGoodbye :)\n")
