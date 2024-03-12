@@ -99,8 +99,6 @@ def more_seats():#ask the user if they want to continue to add more seats
 
 #-----------------------MAIN CODE BEGINS BELOW--------------------------
 
-answer = "Y"
-
 while answer.upper() == "Y":
 
     print('\n\n\t\t-------------------------------------')
@@ -114,8 +112,8 @@ while answer.upper() == "Y":
 
     print('\t\t-------------------------------------')
 
-    row_input = row_get()#returns the row choice
-    seat_input = seat_get()#returns the seat choice
+    row_input = row_get()
+    seat_input = seat_get()
 
     print(f"\t\tYou have chosen: ROW:{row_input} SEAT:{seat_input}")
    
