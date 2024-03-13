@@ -3,14 +3,25 @@
 #Final (woooooooooooo)
 #Course name: SE126
 #Prompt:
-
+#For your Final Assignment in Python you will be building a program of your own design! You may work in groups of up to 2 people to design a program of your choosing.  The program must showcase everything you have learned to do in Python from SE116 and SE126 The only stipulation is that it must be creative (it cannot be a regurgitation of a previous lab assignment, although it can take inspiration from one) and you must fully document anything not strictly covered in the courses, in addition to your standard documentation notes. At the start of class Week 10 Day 2 you will be expected to have the final program file and any supporting files uploaded. You will each give a formal 5minute PowerPoint/Slide/Prezi presentation of your project W10D2 to include an overview of your project, your approach to solving it, your testing, and its final run version.
 
 #----------------------------------------------------------------------
+import os
+
 
 #hello :)
 print("\nWelcome to the Pokemon Character Creator :)")
 
 #---Functions-------------------------------------
+
+
+def clear():
+    # for windows
+    if os.name == 'nt':
+        _ = os.system('cls')
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = os.system('clear')
 
 def menu():
 
@@ -50,6 +61,8 @@ while choice != '4':
     #--------------------- Choice 1 --------------------------
     if choice == '1':
 
+        clear()
+
         print('showing all characters made...')
 
         print(f"\t\t{'NAME':10} {'STARTER':10} {'REGION':10}")
@@ -57,12 +70,12 @@ while choice != '4':
 
         for i in range(len(name)):
 
-            print(f"\t\t{name[i]:10} {starter[i]:10} {region[i]:10}") 
-        
-        
+            print(f"\t\t{name[i]:10} {starter[i]:10} {region[i]:10}")
 
     #--------------------- Choice 2 --------------------------
     if choice == '2':
+
+        clear()
 
         print('\n\n\tChoosing name...')
 
@@ -158,7 +171,7 @@ while choice != '4':
         #----------------------- Gen 5 ------------------------------------------------------
         if gen == '5':
 
-            print(f"\n{fire[4]:10}{'|'}{water[4]:10}{'|'}{fire[4]:10}")
+            print(f"\n{grass[4]:10}{'|'}{water[4]:10}{'|'}{fire[4]:10}")
 
             gen_choice = input("\nPlease Choose Pokemone [1-3] ")
 
@@ -311,6 +324,8 @@ while choice != '4':
     #--------------------- Choice 3 --------------------------
 
     if choice == '3':
+
+        clear()
 
         print('\n\n\tsearching...')
 
