@@ -6,8 +6,6 @@
 
 
 #----------------------------------------------------------------------
-from os import system, name 
-from time import sleep 
 
 #hello :)
 print("\nWelcome to the Pokemon Character Creator :)")
@@ -31,9 +29,6 @@ def menu():
     
     return menu_choice
 
-#--------------------------------------------------------------------------------------------------------------
- 
-
 #---Main Code-------------------------------------
 
 #make list---
@@ -46,6 +41,8 @@ grass = ['Bulbasaur', 'Chikorita', 'Treecko', 'Turtwig', 'Snivy', 'Chespin', 'Ro
 water = ['Squirtle', 'Totodile', 'Mudkip', 'Piplup', 'Oshawott', 'Froakie', 'Popplio', 'Sobble', 'Quaxly']
 fire = ['Charmander', 'Cyndaquil', 'Torchic', 'Chimchar','Tepig', 'Fennekin', 'Litten', 'Scorbunny', 'Fuecoco']
 
+region_list = ['Kanto','Johto','Hoenn','Sinnoh','Unova','Kalos','Alola','Galar','Paldea']
+
 choice = menu()
 
 while choice != '4':
@@ -55,9 +52,12 @@ while choice != '4':
 
         print('showing all characters made...')
 
+        print(f"\t\t{'NAME':10} {'STARTER':10} {'REGION':10}")
+        print("\t\t-------------------------------")
+
         for i in range(len(name)):
 
-            print(f"{name[i]:10} {starter[i]:10} {region[i]:10}") 
+            print(f"\t\t{name[i]:10} {starter[i]:10} {region[i]:10}") 
         
         
 
@@ -252,59 +252,60 @@ while choice != '4':
 
         #------------------ Region Choice -------------------------------------
 
-        print("\n\n\tChoose region")
+        print("\n\n\tChoose region...\n")
 
-        print("\nRegion 1: Kanto \n Region 2: Johto")
-        print("\nRegion 3: Hoenn \n Region 4: Sinnoh")
-        print("\nRegion 5: Unova \n Region 6: Kalos")
-        print("\nRegion 7: Alola \n Region 8: Galar")
-        print("\nRegion 9: Paldea")
+        #show region list----------------------------
+        for i in range(0, len(region_list)):
+
+            print(f"Region {i + 1}: {region_list[i]}\n")
 
         region_choice = input("\nChoose Region [1-9]: ")
 
+        #append region---------------------------
+
         if region_choice == '1':
 
-            region.append(region_choice)
+            region.append(region_list[0])
 
 
         if region_choice == '2':
 
-            region.append(region_choice)
+            region.append(region_list[1])
 
 
         if region_choice == '3':
 
-            region.append(region_choice)
+            region.append(region_list[2])
 
 
         if region_choice == '4':
 
-            region.append(region_choice)
+            region.append(region_list[3])
 
 
         if region_choice == '5':
 
-            region.append(region_choice)
+            region.append(region_list[4])
 
 
         if region_choice == '6':
 
-            region.append(region_choice)
+            region.append(region_list[5])
 
 
         if region_choice == '7':
 
-            region.append(region_choice)
+            region.append(region_list[6])
 
 
         if region_choice == '8':
 
-            region.append(region_choice)
+            region.append(region_list[7])
 
 
         if region_choice == '9':
 
-            region.append(region_choice)
+            region.append(region_list[8])
 
 
     #--------------------- Choice 3 --------------------------
@@ -312,6 +313,8 @@ while choice != '4':
     if choice == '3':
 
         print('\n\n\tsearching...')
+
+        #-------------- Seq Search --------------------------
 
         search_name = input("\nPlease Enter name you are looking for: ")
 
@@ -340,16 +343,18 @@ while choice != '4':
 
     choice = menu()
 
-#-------------- Seq Search --------------------------
+#----------------------END----------------------------------
+    
+print('\n\n\tshowing all characters made...\n\n')
 
-
-
-
-
-#--------------------------------------------------------
-print('\n\n\tshowing all characters made...')
+print(f"\t\t{'NAME':10} {'STARTER':10} {'REGION':10}")
+print("\t\t-------------------------------")
 
 for i in range(len(name)):
 
-    print(f"{name[i]:10} {starter[i]:10} {region[i]:10}")
+    print(f"\t\t{name[i]:10} {starter[i]:10} {region[i]:10}")
 
+
+#--------------------------------------------------------
+print("\n--------------------------------------------------------")
+print("Goodbye :)")
